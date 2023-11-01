@@ -1,3 +1,11 @@
+/*
+Написать прототип компаратора - метод внутри класса сотрудника, сравнивающий две даты, представленные в виде трёх чисел гггг-мм-дд,
+без использования условного оператора.
+Опишите класс руководителя, наследник от сотрудника. Перенесите статический метод повышения зарплаты в класс руководителя,
+модифицируйте метод таким образом, чтобы он мог поднять заработную плату всем, кроме руководителей.
+В основной программе создайте руководителя и поместите его в общий массив сотрудников.
+Повысьте зарплату всем сотрудникам и проследите, чтобы зарплата руководителя не повысилась
+*/
 package org.example;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +14,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-// Создание списка сотрудников
+
         List<Employee> employees = new ArrayList<>();
         employees.add(new Employee("John Doe", 3000, 35));
         employees.add(new Manager("Jane Smith", 5000, 40));
@@ -17,7 +25,7 @@ public class Main {
         ) {
             System.out.println(employee);
         }
-        // Повышение зарплаты всем сотрудникам, кроме руководителей
+
         Manager.increaseSalary(employees.toArray(new Employee[0]), 1000);
         System.out.println("\nAfter salary increase:");
         for (Employee employee : employees) {
